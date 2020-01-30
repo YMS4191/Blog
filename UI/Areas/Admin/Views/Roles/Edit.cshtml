@@ -1,0 +1,107 @@
+﻿@model RoleDetailsVM
+
+<div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="RoleId" value="@Model.Role.Id" />
+    <input type="hidden" name="RoleName" value="@Model.Role.Name" />
+
+    <div class="row">
+        <div class="col">
+
+            <h6 class="bg-info pl-5 pt-2 pb-2 text-white rounded mt-3 mb-2">
+                Add to @Model.Role.Name
+            </h6>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>User Name</th>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.NonMembers.Count() == 0)
+                    {
+                        <tr>
+                            <td colspan="3">All user are members </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        foreach (var none in Model.NonMembers)
+                        {
+                            <tr>
+                                <td>@none.Id</td>
+                                <td>@none.UserName</td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="@none.Id" name="IdsToAdd" value="@none.Id">
+     <label class="custom-control-label" for="@none.Id">Select</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+    <div class="row mt-5">
+        <div class="col">
+
+            <h6 class="bg-danger pl-5 pt-2 pb-2 text-white rounded mt-3 mb-2">
+                Delete to @Model.Role.Name
+            </h6>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>User Name</th>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Members.Count() == 0)
+                    {
+                        <tr>
+                            <td colspan="3">All user are members </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        foreach (var none in Model.Members)
+                        {
+                            <tr>
+                                <td>@none.Id</td>
+                                <td>@none.UserName</td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="@none.Id" name="IdsToDelete" value="@none.Id">
+                                        <label class="custom-control-label" for="@none.Id">Select</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button type="submit" class="btn btn-outline-dark float-right"><i class="fa fa-save"></i> Kaydet</button>
+        </div>
+    </div>
+
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,75 @@
+﻿<div  class="row mt-4" id="card"></div>
+ 
+@section Scripts{
+    <script>
+
+        $(document).ready(function () {
+            (function () {
+                $.getJSON("/admin/postimages/_index/@Model", function (data) {
+                    $.each(data, function (key, value) {
+                     
+                        var cls = ""
+
+                        if (value.isMain) {
+                            cls = "warning"
+                        }
+                        else {
+                            cls = "dark"
+                        }
+
+  $("#card").append(`<div id="${value.id}" class="col-3 mb-3 hide-item"> <div class="card shadow-sm">
+                    <img src="${value.imageUrl}" alt="slider" class="card-img-top" />
+                    <div class="card-body content-right">
+
+  <button data-id="${value.id}" class="active  btn btn-outline-${cls} btn-sm">
+<i class="fa fa-cog"></i></button>
+
+  <button data-id="${value.id}" class="delete  btn btn-outline-danger btn-sm">
+<i class="fa fa-trash"></i></button></div></div></div>`);
+
+                    })
+                })
+            })();
+
+            $(document).on("click", ".delete", function () { 
+                var id = $(this).data("id");
+                $.ajax({
+                    url: "/admin/postimages/_delete/"+ id,
+                    dataType: "json",
+                    type: "post",
+                    success: function (result) {
+                        if (result == 200) {
+                            $("#" + id).hide("slow");
+                        }
+                    },
+                    error: function () {} 
+                })
+            }) 
+
+            $(document).on("click", ".active", function () {
+
+                var button = $(this);
+                var id = $(button).data("id");
+
+                $.ajax({
+                    url: "/admin/postimages/_active/" + id,
+                    dataType: "json",
+                    type: "post",
+                    success: function (result) { 
+                        if (result.code == 200) {
+                             
+                            $(".active")
+                                .removeClass("btn-outline-warning")
+                                .addClass("btn-outline-dark");
+
+                            $(button)
+                                .removeClass("btn-outline-dark") 
+                                .addClass("btn-outline-warning"); 
+                        }
+                    },
+                    error: function () { } 
+                })
+            })
+        })
+    </script>
+}

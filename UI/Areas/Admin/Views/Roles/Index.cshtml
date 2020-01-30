@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Kullanıcı Role";
+}
+
+@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
+<div class="row mt-5">
+    <div class="col">
+        <a asp-action="Create" class="btn btn-outline-dark mb-2 btn-sm">
+            <i class="fa fa-user-plus"></i>
+            Yeni Ekle
+        </a>
+        <table class="table table-hower">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        Users
+                    </th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model == null)
+                {
+                    <tr>
+                        <td colspan="4">user not found</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td identity-role="@item.Id"></td>
+                            <td>
+                                <form asp-action="Delete"
+                                      method="post"
+                                      asp-route-id="@item.Id">
+                                    <a asp-action="edit"
+                                       asp-route-id="@item.Id"
+                                       class="btn btn-sm btn-outline-warning">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <button type="submit"
+                                            class="btn btn-sm btn-outline-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

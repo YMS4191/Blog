@@ -1,0 +1,55 @@
+@{
+    ViewData["Title"] = "Post Listesi";
+}
+@model IEnumerable<Post>
+
+
+<div class="row mt-5">
+    <div class="col">
+        <a asp-action="Create" class="btn btn-outline-dark mb-2 btn-sm">
+            <i class="fa fa-pencil-square-o"></i>
+            Yeni Ekle
+        </a>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Başlık</th>
+                    <th>İçerik</th>
+                    <th>Type</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Post post in Model)
+                {
+                    <tr>
+                        <td>@post.Id</td>
+                        <td>@post.Title</td>
+                        <td>@post.Content</td>
+                        <td>@post.ShowType.ToString()</td>
+                        <td>
+                            <a title="Resim Ekle" asp-action="upload" asp-controller="PostImages" asp-route-id="@post.Id" class="btn btn-sm btn-outline-dark">
+                                <i class="fa fa-file-image-o"></i>
+                            </a>
+
+                            <a title="Resim Listesi" asp-action="index" asp-controller="PostImages" asp-route-id="@post.Id" class="btn btn-sm btn-outline-success">
+                                <i class="fa fa-file-image-o"></i>
+                            </a>
+
+                            <a asp-action="details" class="btn btn-sm btn-outline-info">
+                                <i class="fa fa-search"></i>
+                            </a>
+                            <a asp-action="edit" asp-route-id="@post.Id" class="btn btn-sm btn-outline-warning">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+                            <a asp-action="delete" asp-route-id="@post.Id" class="btn btn-sm btn-outline-danger">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

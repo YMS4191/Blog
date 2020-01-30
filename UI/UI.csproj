@@ -1,0 +1,108 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\bower_components\fancybox\helpers\fancybox_buttons.png" />
+    <None Include="wwwroot\bower_components\fancybox\helpers\jquery.fancybox-buttons.css" />
+    <None Include="wwwroot\bower_components\fancybox\helpers\jquery.fancybox-buttons.js" />
+    <None Include="wwwroot\bower_components\fancybox\helpers\jquery.fancybox-media.js" />
+    <None Include="wwwroot\bower_components\fancybox\helpers\jquery.fancybox-thumbs.css" />
+    <None Include="wwwroot\bower_components\fancybox\helpers\jquery.fancybox-thumbs.js" />
+    <None Include="wwwroot\bower_components\fancybox\blank.gif" />
+    <None Include="wwwroot\bower_components\fancybox\fancybox_loading.gif" />
+    <None Include="wwwroot\bower_components\fancybox\fancybox_loading%402x.gif" />
+    <None Include="wwwroot\bower_components\fancybox\fancybox_overlay.png" />
+    <None Include="wwwroot\bower_components\fancybox\fancybox_sprite.png" />
+    <None Include="wwwroot\bower_components\fancybox\fancybox_sprite%402x.png" />
+    <None Include="wwwroot\bower_components\fancybox\jquery.fancybox.css" />
+    <None Include="wwwroot\bower_components\fancybox\jquery.fancybox.js" />
+    <None Include="wwwroot\bower_components\fancybox\jquery.fancybox.pack.js" />
+    <None Include="wwwroot\bower_components\FlexSlider\fonts\flexslider-icon.eot" />
+    <None Include="wwwroot\bower_components\FlexSlider\fonts\flexslider-icon.svg" />
+    <None Include="wwwroot\bower_components\FlexSlider\fonts\flexslider-icon.ttf" />
+    <None Include="wwwroot\bower_components\FlexSlider\fonts\flexslider-icon.woff" />
+    <None Include="wwwroot\bower_components\FlexSlider\images\bg_play_pause.png" />
+    <None Include="wwwroot\bower_components\FlexSlider\flexslider.css" />
+    <None Include="wwwroot\bower_components\FlexSlider\jquery.flexslider.js" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\bgtile.jpg" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\blog.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\buy.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\check.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\closer.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\colorpicker.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\diag.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\givetry.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\grain.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\headergradient.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\image.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\link.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\list.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\logo.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\low_contrast_linen.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\media.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\metro.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\navy_blue.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\opener.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\portfolio.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\slogenshadow.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\topgradient.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\twitter.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\tiles\zoom.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\black50.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\grain.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\link.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\link_clean.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\loader.gif" />
+    <None Include="wwwroot\bower_components\megafolio\assets\lupe.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\plus.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\resize.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\socialbar-bg.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\white50.png" />
+    <None Include="wwwroot\bower_components\megafolio\assets\zoom_clean.png" />
+    <None Include="wwwroot\bower_components\megafolio\css\settings.css" />
+    <None Include="wwwroot\bower_components\megafolio\icons\comments.png" />
+    <None Include="wwwroot\bower_components\megafolio\icons\facebook.png" />
+    <None Include="wwwroot\bower_components\megafolio\icons\like.png" />
+    <None Include="wwwroot\bower_components\megafolio\icons\more.png" />
+    <None Include="wwwroot\bower_components\megafolio\icons\twitter.png" />
+    <None Include="wwwroot\bower_components\megafolio\js\jquery.themepunch.megafoliopro.js" />
+    <None Include="wwwroot\bower_components\megafolio\js\jquery.themepunch.megafoliopro.min.js" />
+    <None Include="wwwroot\bower_components\megafolio\js\jquery.themepunch.tools.min.js" />
+    <None Include="wwwroot\bower_components\owl.carousel\assets\owl.carousel.css" />
+    <None Include="wwwroot\bower_components\owl.carousel\owl.carousel.js" />
+    <None Include="wwwroot\bower_components\owl.carousel\owl.carousel.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CustomHelpers\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Account\" />
+    <Folder Include="Areas\Admin\Views\Roles\" />
+    <Folder Include="Areas\Admin\CustomHelpers\" />
+  </ItemGroup>
+</Project>
